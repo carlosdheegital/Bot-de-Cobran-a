@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot de Mensagens</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Envio de Mensagens</h1>
+        
+        <form id="formMensagem">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Nome do Cliente" required>
+            
+            <label for="numero">Número:</label>
+            <input type="tel" id="numero" name="numero" placeholder="Ex: +55 11 91234-5678" required>
+            
+            <label for="data">Data de Vencimento:</label>
+            <input type="date" id="data" name="data" required>
+            
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" required>Olá, {NOME}! Seu boleto vence no dia {DATA}. Qualquer dúvida, estou à disposição.</textarea>
+            
+            <button type="submit" class="btn">Enviar Mensagem</button>
+        </form>
+
+        <hr>
+
+        <form id="formUpload">
+            <label for="file">Enviar Planilha:</label>
+            <input type="file" name="file" id="file" required>
+            <button type="submit" class="btn">Enviar Planilha</button>
+        </form>
+
+        <p id="status"></p>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
